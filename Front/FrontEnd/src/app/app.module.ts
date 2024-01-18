@@ -1,0 +1,28 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { NewsPageComponent } from './components/news-page/news-page.component';
+import { AboutUsPageComponent } from './components/about-us-page/about-us-page.component';
+import { DirectPageComponent } from './components/direct-page/direct-page.component';
+import { ArxivPageComponent } from './components/arxiv-page/arxiv-page.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomePageComponent,
+    NewsPageComponent,
+    AboutUsPageComponent,
+    DirectPageComponent,
+    ArxivPageComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

@@ -1,4 +1,5 @@
 ﻿using CitySays.Application.Absreactions;
+using CitySays.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace CitySays.Infrastructure.Persistance
@@ -9,7 +10,10 @@ namespace CitySays.Infrastructure.Persistance
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
-            Database.Migrate();
+            //Database.Migrate();
         }
+
+        public DbSet<Art> Arts { get; set; }
+        public DbSet<Autor> Autors { get; set; }
     }
 }

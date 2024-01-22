@@ -20,7 +20,7 @@ namespace CitySays.Application.UseCases.Arts.Handles
                 var newArt = new Art
                 {
                     Name = request.Name,
-                    AutorId = request.AutorId,
+                    UserId = request.UserId,
                     City = request.City,
                     ImageUrl = request.ImageUrl,
                 };

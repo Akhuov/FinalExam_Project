@@ -2,10 +2,7 @@
 using CitySays.Api.ImgSaveService;
 using CitySays.Application.UseCases.Arts.Commands;
 using CitySays.Application.UseCases.Arts.Querries;
-using CitySays.Application.UseCases.Autors.Commands;
-using CitySays.Application.UseCases.Autors.Querries;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CitySays.Api.Controllers
@@ -13,10 +10,10 @@ namespace CitySays.Api.Controllers
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class ArtsController : ControllerBase
-    { 
+    {
         private readonly ISavingService _savingService;
         private readonly IMediator _mediator;
-        public ArtsController(IMediator mediator,ISavingService service)
+        public ArtsController(IMediator mediator, ISavingService service)
         {
             _mediator = mediator;
             _savingService = service;
@@ -30,7 +27,7 @@ namespace CitySays.Api.Controllers
             {
                 var command = new CreateArtCommand()
                 {
-                    AutorId = dto.AutorId,
+                    UserId = dto.UserId,
                     City = dto.City,
                     ImageUrl = await _savingService.CreateAvatarAsync(dto.Image),
                     Name = dto.Name
@@ -82,7 +79,7 @@ namespace CitySays.Api.Controllers
 
         [HttpPut]
 
-        public async ValueTask<IActionResult> UpdateArtAsync(int id,[FromForm] ArtDto dto)
+        public async ValueTask<IActionResult> UpdateArtAsync(int id, [FromForm] ArtDto dto)
         {
             try
             {
@@ -90,9 +87,9 @@ namespace CitySays.Api.Controllers
                 {
                     Id = id,
                     City = dto.City,
-                    AutorId = dto.AutorId,
+                    UserId = dto.UserId,
                     ImageUrl = await _savingService.CreateAvatarAsync(dto.Image),
-                    Name = dto.Name,    
+                    Name = dto.Name,
                 };
 
                 var res = await _mediator.Send(command);

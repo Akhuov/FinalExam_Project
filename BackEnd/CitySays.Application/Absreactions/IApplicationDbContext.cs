@@ -7,7 +7,7 @@ namespace CitySays.Application.Absreactions
     {
 
         public DbSet<Art> Arts { get; set; }
-        public DbSet<Autor> Autors { get; set; }
+        public DbSet<User> Users { get; set; }
         public Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

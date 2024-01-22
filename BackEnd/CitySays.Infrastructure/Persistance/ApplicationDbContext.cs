@@ -14,6 +14,6 @@ namespace CitySays.Infrastructure.Persistance
         }
 
         public DbSet<Art> Arts { get; set; }
-        public DbSet<Autor> Autors { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }

@@ -24,7 +24,7 @@ namespace CitySays.Application.UseCases.Arts.Handlers
                     res.ImageUrl = request.ImageUrl;
                     res.Name = request.Name;
                     res.City = request.City;
-                    res.AutorId = request.AutorId;
+                    res.UserId = request.UserId;
 
 
                     _applicationDbContext.Arts.Update(res);

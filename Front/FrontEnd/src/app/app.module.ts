@@ -8,6 +8,9 @@ import { NewsPageComponent } from './components/news-page/news-page.component';
 import { AboutUsPageComponent } from './components/about-us-page/about-us-page.component';
 import { DirectPageComponent } from './components/direct-page/direct-page.component';
 import { ArxivPageComponent } from './components/arxiv-page/arxiv-page.component';
+import { RegisterPageComponent } from './components/register-page/register-page.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { LoginPageComponent } from './components/login-page/login-page.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { ArxivPageComponent } from './components/arxiv-page/arxiv-page.component
     NewsPageComponent,
     AboutUsPageComponent,
     DirectPageComponent,
-    ArxivPageComponent
+    ArxivPageComponent,
+    RegisterPageComponent,
+    NotFoundComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,

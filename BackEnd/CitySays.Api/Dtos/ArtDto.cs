@@ -5,7 +5,7 @@ namespace CitySays.Api.Dtos
 {
     public class ArtDto
     {
-        public int AutorId { get; set; }
+        public int UserId { get; set; }
         public string City { get; set; }
         public string Name { get; set; }
 

@@ -29,9 +29,6 @@ namespace CitySays.Infrastructure.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AutorId")
-                        .HasColumnType("int");
-
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
@@ -41,14 +38,17 @@ namespace CitySays.Infrastructure.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("AutorId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Arts");
                 });
 
-            modelBuilder.Entity("CitySays.Domain.Entities.Autor", b =>
+            modelBuilder.Entity("CitySays.Domain.Entities.User", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -59,23 +59,32 @@ namespace CitySays.Infrastructure.Migrations
                     b.Property<string>("NickName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Password")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Role")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
-                    b.ToTable("Autors");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("CitySays.Domain.Entities.Art", b =>
                 {
-                    b.HasOne("CitySays.Domain.Entities.Autor", "Autor")
+                    b.HasOne("CitySays.Domain.Entities.User", "User")
                         .WithMany("Arts")
-                        .HasForeignKey("AutorId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Autor");
+                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("CitySays.Domain.Entities.Autor", b =>
+            modelBuilder.Entity("CitySays.Domain.Entities.User", b =>
                 {
                     b.Navigation("Arts");
                 });

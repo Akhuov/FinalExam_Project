@@ -1,1 +1,265 @@
-<p>home-page works!</p>
+ <div class="container">
+        <div class="header">
+            <div class="header-top">
+                <div></div>
+                <img src="./assets/images/logo.svg" alt="" class="logo">
+                <ul class="lang-menu" id = "login_bool">
+                    <li>
+                        <button (click)="goto_login_page()">
+                            Login
+                        </button>
+                    </li>
+                    <li>
+                        <button (click)="goto_register_page()">
+                            New Account?
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <ul class="header-bottom">
+                <li>
+                    <a class="hand" (click) ="goto_home_page()"><span>Главная</span>
+                        <img src="./assets/icons/down.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a class="hand" (click)="goto_direct_page()">Маршруты</a>
+                </li>
+                <li>
+                    <a class="hand" (click)="goto_news_page()"><span>Новости</span>
+                        <img src="./assets/icons/down.svg" alt="">
+                    </a>
+                </li>
+                <li>
+                    <a class="hand" (click)="goto_about_us_page()">О нас</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="home">
+        <div class="container">
+            <div class="row mb-100">
+                <div class="col-6">
+                    <div class="title mt-150 mb-40">
+                        <h1 class="title mt-150 mb-40">Арт искусство премиум класса</h1>
+                    </div>
+                    <div class="text">
+                        Разрабатываем и воплощаем проекты сооружений всех классов. Фиксируем стоимость до начала работ.
+                    </div>
+                    <button class="btn mt-40 mb-40">
+                        Подробнее о проекте
+                    </button>
+                    <div class="cp">
+                        <img src="./assets/icons/splader.svg" alt="">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="home-img">
+                        <img src="./assets/images/hometop.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-100">
+                <div class="col-6">
+                    <div class="home-middle-img">
+                        <img src="./assets/images/home-middle.svg" alt="">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="home-middle-card pl-80">
+                        <div class="middle-title">
+                            <div class="pr-40">О проекте</div>
+                            <img src="./assets/icons/frame.svg" alt="">
+                        </div>
+                        <div class="text mt-50 mb-50">
+                            Занимаемся поставками инженерного оборудования, организуем их проектирование, строительство
+                            и реконструкцию. Разрабатываем и воплощаем проекты сооружений всех классов. Фиксируем
+                            стоимость до начала работ. Наше преимущество — утонченный стиль, простота в эксплуатации,
+                            долговечность. Практично и со вкусом строим экономичные в эксплуатации системы прудов на всю
+                            жизнь.
+                        </div>
+                        <button class="btn">
+                            Подробнее о проекте
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="small-title mb-100">
+            <div class="pr-40">
+                Архив работ
+            </div>
+            <img src="./assets/icons/frame.svg" alt="">
+        </div>
+
+        <div class="row mb-100">
+            <a class="hand" (click) = "goto_arxiv_page()" class="col-4">
+                <div class="home-box">
+                    <img src="./assets/images/home.png" alt="">
+                    <div class="home-box-bottom">
+                        <div class="home-title">
+                            2021 Объект 32 ФАН
+                        </div>
+                        <div class="home-text">
+                            Наше преимущество — утонченный стиль, простота в эксплуатации, долговечность. Практично и со
+                            вкусом строим экономичные в эксплуатации системы прудов на всю жизнь.
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <a class="hand" (click) = "goto_arxiv_page()" class="col-4">
+                <div class="home-box">
+                    <img src="./assets/images/home2.png" alt="">
+                    <div class="home-box-bottom">
+                        <div class="home-title">
+                            2021 Объект 32 ФАН
+                        </div>
+                        <div class="home-text">
+                            Наше преимущество — утонченный стиль, простота в эксплуатации, долговечность. Практично и со
+                            вкусом строим экономичные в эксплуатации системы прудов на всю жизнь.
+                        </div>
+                    </div>
+                    <div class="d-center mt-40">
+                        <button class="btn">
+                            Весь архив
+                        </button>
+                    </div>
+                </div>
+            </a>
+            <a class="hand" (click) = "goto_arxiv_page()" class="col-4">
+                <div class="home-box">
+                    <img src="./assets/images/home3.png" alt="">
+                    <div class="home-box-bottom">
+                        <div class="home-title">
+                            2021 Объект 32 ФАН
+                        </div>
+                        <div class="home-text">
+                            Наше преимущество — утонченный стиль, простота в эксплуатации, долговечность. Практично и со
+                            вкусом строим экономичные в эксплуатации системы прудов на всю жизнь.
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <div class="small-title mb-60">
+            <div class="pr-40">
+                <a class="hand" (click)="goto_direct_page()">Маршруты</a>
+            </div>
+            <img src="./assets/icons/frame.svg" alt="">
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <div class="hm">
+                    <img src="./assets/images/home4.svg" alt="">
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="hm">
+                    <img src="./assets/images/home5.svg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="d-center mb-100 mt-50">
+            <button class="btn">
+                Все прогулки
+            </button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <img src="./assets/icons/footer-left.svg" alt="" class="footer-left-img">
+        <img src="./assets/icons/footer-top.svg" alt="" class="footer-top">
+        <img src="./assets/icons/footer-middle.svg" alt="" class="footer-middle">
+        <img src="./assets/icons/footer-bottom.svg" alt="" class="footer-img">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <div class="footer-left">
+                        <img src="./assets/images/white-logo.svg" alt="">
+                        <div class="footer-text">
+                            Онлайн-архив и исследовательский проект, посвященный уличной культуре Архангельска
+                        </div>
+                        <button class="btn btn-yellow">
+                            Задонатить на проект
+                        </button>
+                        <div class="footer-media">
+                            <img src="./assets/icons/tg.svg" alt="">
+                            <img src="./assets/icons/wk.svg" alt="">
+                            <img src="./assets/icons/mail.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-8">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="box-right">
+                                <div class="footer-title">
+                                    Уличное искусство
+                                </div>
+                                <div class="footer-text">
+                                    Архив работ
+                                </div>
+                                <div class="footer-text">
+                                    Художники
+                                </div>
+                                <div class="footer-text">
+                                    Видео
+                                </div>
+                                <div class="footer-text">
+                                    Исследование
+                                </div>
+                                <div class="footer-text">
+                                    Личные архивы
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="box-right">
+                                <div class="footer-title">
+                                    Новости
+                                </div>
+                                <div class="footer-text">
+                                    Новости
+                                </div>
+                                <div class="footer-text">
+                                    Афиша
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="box-right">
+                                <div class="footer-title">
+                                    О нас
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="box-right">
+                                <div class="footer-title">
+                                    Маршруты
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-text">
+                    2022©CitySays. Все права защищены.
+                </div>
+                <div class="footer-text">
+                    Политика конфиденциальности
+                </div>
+            </div>
+        </div>
+    </div>

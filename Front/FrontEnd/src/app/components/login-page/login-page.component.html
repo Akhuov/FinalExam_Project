@@ -5,9 +5,9 @@
             <div class="signup">
                 <form [formGroup]="userForm">
                     <label for="chk" aria-hidden="true">Sign up</label>
-                    <input type="text" name="txt" placeholder="User name" required="" formControlName="NickName" >
-                    <input type="email" name="email" placeholder="Email" required="" formControlName = "UserName" >
-                    <input type="password" name="pswd" placeholder="Password" required="" formControlName = "Password" >
+                    <input type="text" name="txt" placeholder="User name" formControlName="NickName" >
+                    <input type="email" name="email" placeholder="Email" formControlName = "UserName" >
+                    <input type="password" name="pswd" placeholder="Password"  formControlName = "Password" >
                     <button (click) ="post()">Sign up</button>
                 </form>
             </div>

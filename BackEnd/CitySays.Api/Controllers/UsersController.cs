@@ -2,6 +2,7 @@
 using CitySays.Application.UseCases.Users.Commands;
 using CitySays.Application.UseCases.Users.Querries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CitySays.Api.Controllers
@@ -18,7 +19,6 @@ namespace CitySays.Api.Controllers
 
 
         [HttpPost]
-
         public async ValueTask<IActionResult> CreateAutorAsync(UserDto dto)
         {
             try
@@ -55,6 +55,7 @@ namespace CitySays.Api.Controllers
         }
 
         [HttpGet]
+        [Authorize]
 
         public async ValueTask<IActionResult> GetByIdAutorAsync(int id)
         {
@@ -70,6 +71,7 @@ namespace CitySays.Api.Controllers
         }
 
         [HttpPut]
+        [Authorize]
 
         public async ValueTask<IActionResult> UpdateAutorAsync(int id, UserDto dto)
         {
@@ -93,6 +95,7 @@ namespace CitySays.Api.Controllers
 
 
         [HttpDelete]
+        [Authorize]
         public async ValueTask<IActionResult> DeleteAutorAsync(int id)
         {
             try

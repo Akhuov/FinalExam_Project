@@ -42,7 +42,7 @@ export class ApiService {
 
   postUser(data: any)
   {
-    return this.http.post<any>("http://localhost:5001/api/Users/CreateAutor", data , this.httpOptions)
+    return this.http.post<any>("http://localhost:5001/api/Users/CreateAutor", data, this.httpOptions)
   }
 
   getAllUsers(){

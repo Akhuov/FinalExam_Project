@@ -4,6 +4,7 @@ using CitySays.Application.Services.Arts;
 using CitySays.Application.UseCases.Arts.Commands;
 using CitySays.Application.UseCases.Arts.Querries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CitySays.Api.Controllers
@@ -23,7 +24,7 @@ namespace CitySays.Api.Controllers
         }
 
         [HttpPost]
-
+        [Authorize]
         public async ValueTask<IActionResult> CreateArtAsync([FromForm] ArtDto dto)
         {
             try
@@ -48,7 +49,6 @@ namespace CitySays.Api.Controllers
 
 
         [HttpGet]
-
         public async ValueTask<IActionResult> GetAllArtsAsync()
         {
             try
@@ -65,6 +65,7 @@ namespace CitySays.Api.Controllers
 
         [HttpGet]
 
+        [Authorize]
         public async ValueTask<IActionResult> GetByIdArtAsync(int id)
         {
             try
@@ -81,6 +82,7 @@ namespace CitySays.Api.Controllers
 
 
         [HttpPut]
+        [Authorize]
 
         public async ValueTask<IActionResult> UpdateArtAsync(int id, [FromForm] ArtDto dto)
         {
@@ -106,6 +108,7 @@ namespace CitySays.Api.Controllers
 
 
         [HttpDelete]
+        [Authorize]
         public async ValueTask<IActionResult> DeleteArtAsync(int id)
         {
             try

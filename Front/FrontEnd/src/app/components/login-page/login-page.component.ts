@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../../services/http-services/api.service';
 import { FormBuilder,FormGroup,Validators } from '@angular/forms';
-import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-login-page',

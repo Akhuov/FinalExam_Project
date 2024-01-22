@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -7,6 +9,11 @@ export class GlobalServiceService {
   constructor(private router : Router ){
   }
   
+  
+
+
+
+
   goto_news_page(){
     this.router.navigate(['/news-page'])
   }
@@ -29,4 +36,5 @@ export class GlobalServiceService {
   goto_login_page(){
     this.router.navigate(['/login-page'])
   }
+
 }

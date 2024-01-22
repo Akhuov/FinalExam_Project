@@ -1,8 +1,9 @@
-﻿namespace CitySays.Application.Services.Auths
+﻿using CitySays.Application.ViewModels;
+
+namespace CitySays.Application.Services.Auths
 {
     public interface IAuthService
     {
-        public ValueTask<string> GenerateToken(string username, string role);
-
+        ValueTask<string> Login(UserCheckDto request);
     }
 }

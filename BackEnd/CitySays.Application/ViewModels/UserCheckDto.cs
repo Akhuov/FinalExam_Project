@@ -1,8 +1,7 @@
-﻿namespace CitySays.Api.Dtos
+﻿namespace CitySays.Application.ViewModels
 {
-    public class UserDto
+    public class UserCheckDto
     {
-        public string NickName { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
     }

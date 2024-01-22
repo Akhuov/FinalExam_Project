@@ -3,12 +3,12 @@
         <input type="checkbox" id="chk" aria-hidden="true">
     
             <div class="signup">
-                <form>
+                <form [formGroup]="userForm">
                     <label for="chk" aria-hidden="true">Sign up</label>
-                    <input type="text" name="txt" placeholder="User name" required="">
-                    <input type="email" name="email" placeholder="Email" required="">
-                    <input type="password" name="pswd" placeholder="Password" required="">
-                    <button>Sign up</button>
+                    <input type="text" name="txt" placeholder="User name" required="" formControlName="NickName" >
+                    <input type="email" name="email" placeholder="Email" required="" formControlName = "UserName" >
+                    <input type="password" name="pswd" placeholder="Password" required="" formControlName = "Password" >
+                    <button (click) ="post()">Sign up</button>
                 </form>
             </div>
     

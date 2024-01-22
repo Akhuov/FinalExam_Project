@@ -27,7 +27,6 @@ namespace CitySays.Api.Controllers
                 {
                     NickName = dto.NickName,
                     Password = dto.Password,
-                    Role = dto.Role,
                     UserName = dto.UserName,
                 };
 
@@ -81,7 +80,6 @@ namespace CitySays.Api.Controllers
                     Id = id,
                     NickName = dto.NickName,
                     Password = dto.Password,
-                    Role = dto.Role,
                     UserName = dto.UserName,
                 };
                 var res = await _mediator.Send(command);

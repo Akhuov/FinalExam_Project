@@ -1,54 +1,35 @@
 ﻿
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
+using CitySays.Application.Absreactions;
+using CitySays.Application.Services.JWT;
+using CitySays.Application.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace CitySays.Application.Services.Auths
 {
     public class AuthService : IAuthService
     {
-        private readonly IConfiguration _configuration;
+        private readonly IApplicationDbContext _context;
+        private readonly ITokenService _tokenService;
 
-        public AuthService(IConfiguration configuration)
+        public AuthService(IApplicationDbContext context, ITokenService tokenService)
         {
-            _configuration = configuration;
+            _context = context;
+            _tokenService = tokenService;
         }
 
-        public async ValueTask<string> GenerateToken(string username, string role)
+        public async ValueTask<string> Login(UserCheckDto request)
         {
-            // bu malumotlar
-            var claims = new Claim[]
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.UserName == request.UserName);
+
+            if (user is null)
             {
-                // name 
-                new Claim(JwtRegisteredClaimNames.Name, username),
-                // identificatori
-                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                // vaqti
-                new Claim(JwtRegisteredClaimNames.Iat, DateTime.Now.ToString()),
-                // role qo'shilmoqda
-                new Claim(ClaimTypes.Role, role)
-
-            };
-
-            // qandedur algoritm boyicha shifrlanadi
-            var credentials = new SigningCredentials(
-                new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"])),
-                SecurityAlgorithms.HmacSha256
-                );
-
-            var token = new JwtSecurityToken(
-                _configuration["JWT:ValidIssuer"],
-                _configuration["JWT:ValidAudience"],
-                claims,
-                expires: DateTime.Now.AddMinutes(1),
-                signingCredentials: credentials
-                );
-
-            var tokenHandler = new JwtSecurityTokenHandler();
-
-            return tokenHandler.WriteToken(token);
+                throw new Exception("User not Found");
+            }
+            else if (user.Password != request.Password)
+            {
+                throw new Exception("Password is wrong!!");
+            }
+            return _tokenService.Generate(user.UserName);
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using CitySays.Application.Services.Auths;
-using CitySays.Application.UseCases.Users.Querries;
-using CitySays.Domain.Models;
-using MediatR;
+using CitySays.Application.ViewModels;
+using CitySays.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CitySays.Api.Controllers
@@ -10,30 +9,30 @@ namespace CitySays.Api.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        //private readonly IMediator _mediator;
-        //private readonly IAuthService _authService;
+        private readonly IAuthService _authService;
+        private readonly ILogger<AuthController> _logger;
 
-        //public AuthController(IMediator mediator, IAuthService authService)
-        //{
-        //    _mediator = mediator;
-        //    _authService = authService;
-        //}
+        public AuthController(IAuthService authService, ILogger<AuthController> logger)
+        {
+            _authService = authService;
+            _logger = logger;
 
-        //[HttpPost]
-        //public async ValueTask<IActionResult> Login(LoginRequest loginRequest)
-        //{
-        //    var user = _mediator.Send(new GetAllUsersCommand())
-        //        .Result
-        //        .FirstOrDefault(x => x.UserName == loginRequest.UserName && x.Password == loginRequest.Password);
+        }
 
-        //    if (user == null)
-        //    {
-        //        return NotFound("Login yoki parol hato");
-        //    }
+        [HttpPost]
+        public async ValueTask<IActionResult> Login(UserCheckDto request)
+        {
+            try
+            {
+                var token = await _authService.Login(request);
 
-        //    string token = await _authService.GenerateToken(loginRequest.UserName, user.Role);
-
-        //    return Ok(token);
-        //}
+                return Ok(token);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message, ex.StackTrace);
+                return BadRequest("Username or Password is not valid");
+            }
+        }
     }
 }

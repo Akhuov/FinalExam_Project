@@ -5,12 +5,12 @@
             <img src="./assets/images/logo.svg" alt="" class="logo">
             <ul class="lang-menu">
                 <li>
-                    <button (click)="goto_login_page()">
+                    <button (click)="g_services.goto_login_page()">
                         Login
                     </button>
                 </li>
                 <li>
-                    <button (click)="goto_register_page()">
+                    <button (click)="g_services.goto_login_page()">
                         New Account?
                     </button>
                 </li>
@@ -18,20 +18,20 @@
         </div>
         <ul class="header-bottom">
             <li>
-                <a style="cursor: pointer;" (click)="goto_home_page()"><span>Главная</span>
+                <a style="cursor: pointer;" (click)="g_services.goto_home_page()"><span>Главная</span>
                     <img src="./assets/icons/down.svg" alt="">
                 </a>
             </li>
             <li>
-                <a style="cursor: pointer;" (click)="goto_direct_page()">Маршруты</a>
+                <a style="cursor: pointer;" (click)="g_services.goto_direct_page()">Маршруты</a>
             </li>
             <li>
-                <a style="cursor: pointer;" (click)="goto_news_page()"><span>Новости</span>
+                <a style="cursor: pointer;" (click)="g_services.goto_news_page()"><span>Новости</span>
                     <img src="./assets/icons/down.svg" alt="">
                 </a>
             </li>
             <li>
-                <a style="cursor: pointer;" (click)="goto_about_us_page()">О нас</a>
+                <a style="cursor: pointer;" (click)="g_services.goto_about_us_page()">О нас</a>
             </li>
         </ul>
     </div>
@@ -40,7 +40,7 @@
 <div class="bracpoints">
     <div class="container">
         <div class="bracpoints-line">
-            <a style="cursor: pointer;" (click)="goto_home_page()">Главная</a>
+            <a style="cursor: pointer;" (click)="g_services.goto_home_page()">Главная</a>
             <img src="./assets/images/sl.png" alt="">
             <p>О НАС</p>
         </div>

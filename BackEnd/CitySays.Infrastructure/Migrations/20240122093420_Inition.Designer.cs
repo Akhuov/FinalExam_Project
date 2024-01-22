@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CitySays.Infrastructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240121025504_Inition")]
+    [Migration("20240122093420_Inition")]
     partial class Inition
     {
         /// <inheritdoc />
@@ -36,6 +36,9 @@ namespace CitySays.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Inform")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -63,9 +66,6 @@ namespace CitySays.Infrastructure.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Role")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserName")

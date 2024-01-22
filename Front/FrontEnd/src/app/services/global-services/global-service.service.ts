@@ -26,4 +26,7 @@ export class GlobalServiceService {
   goto_home_page(){
     this.router.navigate(['/home-page'])
   }
+  goto_login_page(){
+    this.router.navigate(['/login-page'])
+  }
 }

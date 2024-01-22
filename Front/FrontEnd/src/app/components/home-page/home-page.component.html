@@ -5,33 +5,38 @@
                 <img src="./assets/images/logo.svg" alt="" class="logo">
                 <ul class="lang-menu" id = "login_bool">
                     <li>
-                        <button (click)="goto_login_page()">
+                        <button (click)="g_services.goto_login_page()">
                             Login
-                        </button>
+                        </button>   
                     </li>
                     <li>
-                        <button (click)="goto_register_page()">
-                            New Account?
-                        </button>
+                        <button style="margin-right: 25px;" class="active">
+                            RU
+                        </button>   
+                    </li>
+                    <li>
+                        <button>
+                            EN
+                        </button>   
                     </li>
                 </ul>
             </div>
             <ul class="header-bottom">
                 <li>
-                    <a class="hand" (click) ="goto_home_page()"><span>Главная</span>
+                    <a class="hand" (click) ="g_services.goto_home_page()"><span>Главная</span>
                         <img src="./assets/icons/down.svg" alt="">
                     </a>
                 </li>
                 <li>
-                    <a class="hand" (click)="goto_direct_page()">Маршруты</a>
+                    <a class="hand" (click)="g_services.goto_direct_page()">Маршруты</a>
                 </li>
                 <li>
-                    <a class="hand" (click)="goto_news_page()"><span>Новости</span>
+                    <a class="hand" (click)="g_services.goto_news_page()"><span>Новости</span>
                         <img src="./assets/icons/down.svg" alt="">
                     </a>
                 </li>
                 <li>
-                    <a class="hand" (click)="goto_about_us_page()">О нас</a>
+                    <a class="hand" (click)="g_services.goto_about_us_page()">О нас</a>
                 </li>
             </ul>
         </div>
@@ -97,7 +102,7 @@
         </div>
 
         <div class="row mb-100">
-            <a class="hand" (click) = "goto_arxiv_page()" class="col-4">
+            <a class="hand" (click) = "g_services.goto_arxiv_page()" class="col-4">
                 <div class="home-box">
                     <img src="./assets/images/home.png" alt="">
                     <div class="home-box-bottom">
@@ -111,7 +116,7 @@
                     </div>
                 </div>
             </a>
-            <a class="hand" (click) = "goto_arxiv_page()" class="col-4">
+            <a class="hand" (click) = "g_services.goto_arxiv_page()" class="col-4">
                 <div class="home-box">
                     <img src="./assets/images/home2.png" alt="">
                     <div class="home-box-bottom">
@@ -130,7 +135,7 @@
                     </div>
                 </div>
             </a>
-            <a class="hand" (click) = "goto_arxiv_page()" class="col-4">
+            <a class="hand" (click) = "g_services.goto_arxiv_page()" class="col-4">
                 <div class="home-box">
                     <img src="./assets/images/home3.png" alt="">
                     <div class="home-box-bottom">
@@ -151,7 +156,7 @@
     <div class="container">
         <div class="small-title mb-60">
             <div class="pr-40">
-                <a class="hand" (click)="goto_direct_page()">Маршруты</a>
+                <a class="hand" (click)="g_services.goto_direct_page()">Маршруты</a>
             </div>
             <img src="./assets/icons/frame.svg" alt="">
         </div>

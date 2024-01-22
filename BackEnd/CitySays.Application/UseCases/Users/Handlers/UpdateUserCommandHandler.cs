@@ -23,7 +23,6 @@ namespace CitySays.Application.UseCases.Users.Handlers
                 {
                     res.NickName = request.NickName;
                     res.UserName = request.UserName;
-                    res.Role = request.Role;
                     res.Password = request.Password;
 
 

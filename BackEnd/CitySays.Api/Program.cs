@@ -1,10 +1,7 @@
-using CitySays.Infrastructure;
-using CitySays.Application;
 using CitySays.Api.ImgSaveService;
-using Microsoft.OpenApi.Models;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
+using CitySays.Application;
+using CitySays.Application.Services.Arts;
+using CitySays.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -73,6 +70,8 @@ builder.Services.AddSwaggerGen();/*options =>*/
 
 
 builder.Services.AddScoped<ISavingService, SavingService>();
+
+builder.Services.AddTransient<IArtService, ArtService>();
 
 builder.Services.AddMemoryCache();
 

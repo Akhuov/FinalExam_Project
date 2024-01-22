@@ -7,6 +7,7 @@
         public string Name { get; set; }
         public User User { get; set; }
         public string City { get; set; }
+        public string Inform { get; set; }
         public string? ImageUrl { get; set; }
 
     }

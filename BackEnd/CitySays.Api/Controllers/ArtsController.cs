@@ -1,5 +1,6 @@
 ﻿using CitySays.Api.Dtos;
 using CitySays.Api.ImgSaveService;
+using CitySays.Application.Services.Arts;
 using CitySays.Application.UseCases.Arts.Commands;
 using CitySays.Application.UseCases.Arts.Querries;
 using MediatR;
@@ -13,10 +14,12 @@ namespace CitySays.Api.Controllers
     {
         private readonly ISavingService _savingService;
         private readonly IMediator _mediator;
-        public ArtsController(IMediator mediator, ISavingService service)
+        private readonly IArtService _artService;
+        public ArtsController(IMediator mediator, ISavingService service, IArtService artService)
         {
             _mediator = mediator;
             _savingService = service;
+            _artService = artService;
         }
 
         [HttpPost]
@@ -113,6 +116,22 @@ namespace CitySays.Api.Controllers
             catch (Exception ex)
             {
                 return BadRequest(ex);
+            }
+        }
+
+
+        [HttpGet]
+
+        public async ValueTask<IActionResult> GetAllArtsWithFullInformationAsync()
+        {
+            try
+            {
+                var res = await _artService.GetAllArtsWithFullInformationAsync();
+                return Ok(res);
+            }
+            catch (Exception ex)
+            {
+                return NotFound();
             }
         }
     }

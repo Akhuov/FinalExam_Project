@@ -23,6 +23,7 @@ namespace CitySays.Application.UseCases.Arts.Handles
                     UserId = request.UserId,
                     City = request.City,
                     ImageUrl = request.ImageUrl,
+                    Inform = request.inform,
                 };
 
 

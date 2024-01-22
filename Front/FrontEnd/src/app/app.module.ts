@@ -11,6 +11,9 @@ import { ArxivPageComponent } from './components/arxiv-page/arxiv-page.component
 import { RegisterPageComponent } from './components/register-page/register-page.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { LoginPageComponent } from './components/login-page/login-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,13 @@ import { LoginPageComponent } from './components/login-page/login-page.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }

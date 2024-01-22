@@ -22,7 +22,6 @@ namespace CitySays.Application.UseCases.Users.Handlers
                     NickName = request.NickName,
                     Password = request.Password,
                     UserName = request.UserName,
-                    Role = request.Role,
                 };
                 await _applicationDbContext.Users.AddAsync(newAutor);
                 await _applicationDbContext.SaveChangesAsync(cancellationToken);
